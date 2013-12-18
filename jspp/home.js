@@ -68,7 +68,7 @@ var christmasFace={
 	},
 	savePhoto:function(url){
 		var self=this;
-		$.get('redir.php?file='+url,function(img){
+		$.get('save-image.php?file='+url,function(img){
 			return function(){
 				self.$app.find('div.fb-pic').remove();
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+'">');
