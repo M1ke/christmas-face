@@ -532,8 +532,9 @@ fbFunctionQ.push(function(){
 });
 
 var christmasFace={
-	elFbImg:'.fb-pic',
-	elDetectImg:'.img',
+	classFbImg:'fb-pic',
+	// classDetectImg:'img',
+	classDetectImg:'fb-pic',
 	domSetup:function(){
 		var self=this;
 		$('.fb-app').bind('fb-login',function(){
@@ -545,7 +546,7 @@ var christmasFace={
 		});
 		$('a.get-face').click(function(e){
 			e.preventDefault();
-			var $img=$(self.elDetectImg);
+			var $img=$('.'+self.classDetectImg);
 			var coords=$img.find('img').faceDetection({
 				error:function(img,code,message){
 					console.log(img);
@@ -579,7 +580,7 @@ var christmasFace={
 				$app.find('div.fb-pic').remove();
 				$.get('redir.php?file='+response.data.url,function(img){
 					return function(){
-						$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo($app).wrap('<div class="'+self.elFbImg+'">');
+						$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo($app).wrap('<div class="'+self.classFbImg+'">');
 						$('a.get-face').fadeIn();
 					};
 				}(response.data.url));
