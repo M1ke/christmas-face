@@ -532,6 +532,20 @@ fbFunctionQ.push(function(){
 });
 
 var christmasFace={
+	domSetup=function(){
+		var self=this;
+		$('.fb-app').bind('fb-login',function(){
+			self.getPicture($(this));
+		});
+		$('a.get-picture').click(function(e){
+			e.preventDefault();
+			self.getPicture();
+		});
+		$('a.get-face').click(function(e){
+			var coords=$('.fb-app').find('img.fb-pic').faceDetection();
+			console.log(coords);
+		});
+	};
 	getPicture:function($app){
 		if (!$app){
 			$app=$('.fb-app');
@@ -546,16 +560,4 @@ var christmasFace={
 	};
 };
 
-$(function(){
-	$('.fb-app').bind('fb-login',function(){
-		christmasFace.getPicture($(this));
-	});
-	$('a.get-picture').click(function(e){
-		e.preventDefault();
-		christmasFace.getPicture();
-	});
-	$('a.get-face').click(function(e){
-		var coords=$('.fb-app').find('img.fb-pic').faceDetection();
-		console.log(coords);
-	});
-});
+$(document).ready(christmasFace.domSetup);
