@@ -1,1 +1,8 @@
 @import "base";
+
+div.img {
+	position: relative;
+	div.face {
+		border: 2px solid #f00;
+	}
+}
