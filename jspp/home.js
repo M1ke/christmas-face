@@ -20,8 +20,8 @@ var christmasFace={
 		}
 		FB.api('/me/picture',{redirect:false,type:'large'},function($app){
 			return function(response){
-				$(this).find('img.fb-pic').remove();
-				$('<img src="'+response.data.url+'">').addClass('fb-pic').prependTo($(this));
+				$app.find('img.fb-pic').remove();
+				$('<img src="'+response.data.url+'">').addClass('fb-pic').prependTo($app);
 			};
 		}($app));
 	}
