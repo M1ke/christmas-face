@@ -1,5 +1,6 @@
 /*> ../jspp_imports/base.js */
 /*> ../../_1site/_scripts/includes/fb-quickapp.js */
+/*> ../../_1site/_scripts/facedetection/facedetection.js */
 
 var fbChristmasFace=function(){
 	fbQuickApp.call(this,true);
