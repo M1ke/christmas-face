@@ -37,4 +37,8 @@ $(function(){
 		e.preventDefault();
 		christmasFace.getPicture();
 	});
+	$('a.get-face').click(function(e){
+		var coords=$('.fb-app').find('img.fb-pic').faceDetection();
+		console.log(coords);
+	});
 });
