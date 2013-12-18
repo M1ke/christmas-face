@@ -532,7 +532,7 @@ fbFunctionQ.push(function(){
 });
 
 var christmasFace={
-	elFbImg:'.fb-pic'
+	elFbImg:'.fb-pic',
 	elDetectImg:'.img',
 	domSetup:function(){
 		var self=this;
