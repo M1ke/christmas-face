@@ -43,4 +43,6 @@ var christmasFace={
 	}
 };
 
-$(document).ready(christmasFace.domSetup);
+$(function(){
+	christmasFace.domSetup();
+});
