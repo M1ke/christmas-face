@@ -7,12 +7,7 @@ var fbChristmasFace=function(){
 fbChristmasFace.prototype=new fbQuickApp();
 fbChristmasFace.prototype.constructor=fbChristmasFace;
 fbChristmasFace.prototype.userLoggedIn=function($link){
-	if (l.user==0){
-		
-	}
-	else {
-		
-	}
+	
 };
 fbFunctionQ.push(function(){
 	if (!window.fbChristmas){
