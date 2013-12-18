@@ -23,9 +23,10 @@ var christmasFace={
 			return function(response){
 				$app.find('img.fb-pic').remove();
 				$('<img src="'+response.data.url+'">').addClass('fb-pic').prependTo($app);
+				$('a.get-face').fadeIn();
 			};
 		}($app));
-	}
+	};
 };
 
 $(function(){
