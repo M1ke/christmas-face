@@ -71,7 +71,7 @@ var christmasFace={
 			};
 		}(url));
 	},
-	photos=[],
+	photos:[],
 	getPhotos:function($app){
 		var self=this;
 		FB.api('/me/photos',function(response){
