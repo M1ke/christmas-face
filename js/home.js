@@ -589,7 +589,7 @@ var christmasFace={
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+'">');
 			};
 		}(url));
-	}
+	},
 	photos=[],
 	getPhotos:function($app){
 		var self=this;
