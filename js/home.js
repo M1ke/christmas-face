@@ -605,7 +605,9 @@ var christmasFace={
 				$.each(response.data,function(key,photo){
 					self.photos.push(photo);
 				});
-				setTimeout(self.outputPhoto,500);
+				setTimeout(function(){
+					self.outputPhoto()
+				},500);
 			});
 		}
 	},
