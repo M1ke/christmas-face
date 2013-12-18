@@ -20,18 +20,42 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
+        <a href="#" class="fb-login">Login</a>
+
+        <div id="fb-root"></div>
+        <script type="text/javascript">
+            var fbFunctionQ=[];
+            if (!window.functionQ){
+                window.functionQ=function(fn,context,params){
+                    return function(){
+                        fn.apply(context,params);
+                    };
+                };
+            }
+            window.fbAsyncInit=function(){
+                try {
+                    FB.init({
+                        appId:'244612282241321'
+                        ,channelURL:'_fb_channel.php'
+                        ,status:true,cookie:true,oauth:true
+                    });
+                }
+                catch (e) {
+                    console && console.log(e);
+                }
+                while (fbFunctionQ.length>0) (fbFunctionQ.shift())();
+            };
+            (function(d,e,id){
+            var js,fjs=d.getElementsByTagName(e)[0];
+            if (d.getElementById(id)){return;}
+            js=d.createElement(e);js.id=id;
+            js.src='//connect.facebook.net/en_GB/all.js';
+            fjs.parentNode.insertBefore(js,fjs);
+            }(document,'script','facebook-jssdk'));
+        </script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/home.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>

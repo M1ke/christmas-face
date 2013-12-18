@@ -1,1 +1,25 @@
 /*> ../jspp_imports/base.js */
+/*> ../../_1site/_scripts/_includes/fb-quickapp.js */
+
+var fbChristmasFace=function(){
+	fbQuickApp.call(this,true);
+};
+fbChristmasFace.prototype=new fbQuickApp();
+fbChristmasFace.prototype.constructor=fbChristmasFace;
+fbChristmasFace.prototype.userLoggedIn=function($link){
+	if (l.user==0){
+		
+	}
+	else {
+		
+	}
+};
+fbFunctionQ.push(function(){
+	if (!window.fbChristmas){
+		window.fbChristmas=new fbChristmasFace();
+	}
+});
+
+$(function(){
+	
+});
