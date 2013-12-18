@@ -543,7 +543,13 @@ var christmasFace={
 		});
 		$('a.get-face').click(function(e){
 			e.preventDefault();
-			var coords=$('.fb-app').find('img.fb-pic').faceDetection();
+			var coords=$('.fb-app').find('img.fb-pic').faceDetection({
+				error:function(img,code,message){
+					console.log(img);
+					console.log(code);
+					console.log(message);
+				};
+			});
 			console.log(coords);
 		});
 	},
