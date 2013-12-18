@@ -18,7 +18,6 @@ fbFunctionQ.push(function(){
 
 var christmasFace={
 	classFbImg:'fb-pic',
-	// classDetectImg:'img',
 	classDetectImg:'fb-pic',
 	$app:{},
 	domSetup:function(){
