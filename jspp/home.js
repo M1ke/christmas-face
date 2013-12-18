@@ -31,7 +31,7 @@ var christmasFace={
 					console.log(img);
 					console.log(code);
 					console.log(message);
-				};
+				}
 			});
 			console.log(coords);
 		});
