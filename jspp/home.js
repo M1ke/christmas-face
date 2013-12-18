@@ -19,7 +19,7 @@ var christmasFace={
 	classFbImg:'fb-pic',
 	// classDetectImg:'img',
 	classDetectImg:'fb-pic',
-	$app,
+	$app:{},
 	domSetup:function(){
 		var self=this;
 		this.$app=$('.fb-app')
