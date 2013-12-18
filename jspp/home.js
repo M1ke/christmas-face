@@ -1,5 +1,6 @@
 /*> ../jspp_imports/base.js */
 /*> ../../_1site/_scripts/includes/fb-quickapp.js */
+/*> ../../_1site/_scripts/includes/math-rand.js */
 /*> ../../_1site/_scripts/facedetection/facedetection.js */
 
 var fbChristmasFace=function(){
@@ -18,9 +19,11 @@ var christmasFace={
 	classFbImg:'fb-pic',
 	// classDetectImg:'img',
 	classDetectImg:'fb-pic',
+	$app,
 	domSetup:function(){
 		var self=this;
-		$('.fb-app').bind('fb-login',function(){
+		this.$app=$('.fb-app')
+		this.$app.bind('fb-login',function(){
 			self.getPicture($(this));
 		});
 		$('a.get-picture').click(function(e){
@@ -53,23 +56,37 @@ var christmasFace={
 			}
 		});
 	},
-	getPicture:function($app){
+	getPicture:function(){
 		var self=this;
-		if (!$app){
-			$app=$('.fb-app');
-		}
-		FB.api('/me/picture',{redirect:false,type:'large'},function($app){
-			return function(response){
-				$app.find('div.fb-pic').remove();
-				$.get('redir.php?file='+response.data.url,function(img){
-					return function(){
-						$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo($app).wrap('<div class="'+self.classFbImg+'">');
-						$('a.get-face').fadeIn();
-					};
-				}(response.data.url));
+		FB.api('/me/picture',{redirect:false,type:'large'},function(response){
+			self.savePhoto(response.data.url);
+		});
+	},
+	savePhoto:function(url){
+		var self=this;
+		$.get('redir.php?file='+url,function(img){
+			return function(){
+				self.$app.find('div.fb-pic').remove();
+				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+'">');
 			};
-		}($app));
+		}(url));
 	}
+	photos=[],
+	getPhotos:function($app){
+		var self=this;
+		FB.api('/me/photos',function(response){
+			$.each(response.data,function(key,photo){
+				self.photos.push(photo);
+			});
+			setTimeout(self.outputPhoto,500);
+		});
+	},
+	outputPhoto:function(){
+		if (this.photos.length>0){
+			var select=rand(0,this.photos.length-1);
+			this.savePhoto(this.photos[select]);
+		}
+	},
 };
 
 $(function(){
