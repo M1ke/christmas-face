@@ -2,12 +2,12 @@
 
 # Compass
 
-#compass compile
-#wait $!
-#git add css/*
+compass compile
+wait $!
+git add css/*
 
 # JSPP
 
-#jspp-compile
-#wait $!
-#git add js/*
+jspp-compile
+wait $!
+git add js/*
