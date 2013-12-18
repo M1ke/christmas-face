@@ -543,7 +543,7 @@ var christmasFace={
 		var self=this;
 		this.$app=$('.fb-app')
 		this.$app.bind('fb-login',function(){
-			self.getPicture($(this));
+			// self.getPicture($(this));
 		});
 		$('a.get-picture').click(function(e){
 			e.preventDefault();
