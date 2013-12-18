@@ -543,7 +543,7 @@ var christmasFace={
 		});
 		$('a.get-face').click(function(e){
 			e.preventDefault();
-			var coords=$('.fb-app').find('img.fb-pic').faceDetection({
+			var coords=$('img.test').faceDetection({
 				error:function(img,code,message){
 					console.log(img);
 					console.log(code);
