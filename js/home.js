@@ -549,6 +549,10 @@ var christmasFace={
 			e.preventDefault();
 			self.getPicture();
 		});
+		$('a.get-photos').click(function(e){
+			e.preventDefault();
+			self.getPhotos();
+		});
 		$('a.get-face').click(function(e){
 			e.preventDefault();
 			var $img=$('.'+self.classDetectImg);
