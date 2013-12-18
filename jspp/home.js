@@ -7,7 +7,7 @@ var fbChristmasFace=function(){
 fbChristmasFace.prototype=new fbQuickApp();
 fbChristmasFace.prototype.constructor=fbChristmasFace;
 fbChristmasFace.prototype.userLoggedIn=function($link){
-	
+	$link.text('Connected');
 };
 fbFunctionQ.push(function(){
 	if (!window.fbChristmas){
