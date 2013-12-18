@@ -615,7 +615,7 @@ var christmasFace={
 	outputPhoto:function(){
 		if (this.photos.length>0){
 			var select=rand(0,this.photos.length-1);
-			this.savePhoto(this.photos[select]);
+			this.savePhoto(this.photos[select].source);
 		}
 	},
 };
