@@ -15,7 +15,7 @@ fbFunctionQ.push(function(){
 });
 
 var christmasFace={
-	domSetup=function(){
+	domSetup:function(){
 		var self=this;
 		$('.fb-app').bind('fb-login',function(){
 			self.getPicture($(this));
@@ -28,7 +28,7 @@ var christmasFace={
 			var coords=$('.fb-app').find('img.fb-pic').faceDetection();
 			console.log(coords);
 		});
-	};
+	},
 	getPicture:function($app){
 		if (!$app){
 			$app=$('.fb-app');
@@ -40,7 +40,7 @@ var christmasFace={
 				$('a.get-face').fadeIn();
 			};
 		}($app));
-	};
+	}
 };
 
 $(document).ready(christmasFace.domSetup);
