@@ -577,8 +577,12 @@ var christmasFace={
 		FB.api('/me/picture',{redirect:false,type:'large'},function($app){
 			return function(response){
 				$app.find('div.fb-pic').remove();
-				$('<img src="redir.php?file='+response.data.url+'">').prependTo($app).wrap('<div class="'+self.elFbImg+'">');
-				$('a.get-face').fadeIn();
+				$.get('redir.php?file='+response.data.url,function(img){
+					return function(){
+						$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo($app).wrap('<div class="'+self.elFbImg+'">');
+						$('a.get-face').fadeIn();
+					};
+				}(response.data.url));
 			};
 		}($app));
 	}
