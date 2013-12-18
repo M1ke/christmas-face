@@ -104,6 +104,7 @@ fbFunctionQ.push(function(){
 		window.fbYourAppObject=new fbYourApp();
 	}
 });
+*/
 
 var fbChristmasFace=function(){
 	fbQuickApp.call(this,true);
