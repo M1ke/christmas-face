@@ -78,12 +78,17 @@ var christmasFace={
 	photos:[],
 	getPhotos:function($app){
 		var self=this;
-		FB.api('/me/photos',function(response){
-			$.each(response.data,function(key,photo){
-				self.photos.push(photo);
+		if (this.photos.length>0){
+			self.outputPhoto();
+		}
+		else {
+			FB.api('/me/photos',function(response){
+				$.each(response.data,function(key,photo){
+					self.photos.push(photo);
+				});
+				setTimeout(self.outputPhoto,500);
 			});
-			setTimeout(self.outputPhoto,500);
-		});
+		}
 	},
 	outputPhoto:function(){
 		if (this.photos.length>0){
