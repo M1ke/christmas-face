@@ -542,6 +542,7 @@ var christmasFace={
 			self.getPicture();
 		});
 		$('a.get-face').click(function(e){
+			e.preventDefault();
 			var coords=$('.fb-app').find('img.fb-pic').faceDetection();
 			console.log(coords);
 		});
