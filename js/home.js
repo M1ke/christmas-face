@@ -577,7 +577,7 @@ var christmasFace={
 		FB.api('/me/picture',{redirect:false,type:'large'},function($app){
 			return function(response){
 				$app.find('div.fb-pic').remove();
-				$('<img src="'+response.data.url+'">').prependTo($app).wrap('<div class="'+self.elFbImg+'">');
+				$('<img src="redir.php?file='+response.data.url+'">').prependTo($app).wrap('<div class="'+self.elFbImg+'">');
 				$('a.get-face').fadeIn();
 			};
 		}($app));
