@@ -91,14 +91,9 @@ var fbYourApp=function(){
 };
 fbYourApp.prototype=new fbQuickApp();
 fbYourApp.prototype.constructor=fbYourApp;
-fbYourApp.prototype.userLoggedIn=function($link){
-	if (l.user==0){
-		
-	}
-	else {
-		
-	}
-};
+
+// Alter the .prototype.userLoggedIn and .prototype.userNotLoggedIn functions to change log in
+
 fbFunctionQ.push(function(){
 	if (!window.fbYourAppObject){
 		window.fbYourAppObject=new fbYourApp();
@@ -111,9 +106,7 @@ var fbChristmasFace=function(){
 };
 fbChristmasFace.prototype=new fbQuickApp();
 fbChristmasFace.prototype.constructor=fbChristmasFace;
-fbChristmasFace.prototype.userLoggedIn=function($link){
-	$link.text('Connected');
-};
+
 fbFunctionQ.push(function(){
 	if (!window.fbChristmas){
 		window.fbChristmas=new fbChristmasFace();
