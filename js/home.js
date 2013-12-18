@@ -527,11 +527,11 @@ var fbChristmasFace=function(){
 };
 fbChristmasFace.prototype=new fbQuickApp();
 fbChristmasFace.prototype.constructor=fbChristmasFace;
-fbChristmasFace.prototype.fbLoginOptions={scope:'user_photos'};
 
 fbFunctionQ.push(function(){
 	if (!window.fbChristmas){
 		window.fbChristmas=new fbChristmasFace();
+		fbChristmas.fbLoginOptions={scope:'user_photos'};
 	}
 });
 
