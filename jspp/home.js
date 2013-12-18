@@ -18,7 +18,7 @@ var christmasFace={
 		if (!$app){
 			$app=$('.fb-app');
 		}
-		fbChristmas.api('/me/picture',{redirect:false,type:'large'},function($app){
+		FB.api('/me/picture',{redirect:false,type:'large'},function($app){
 			return function(response){
 				$(this).find('img.fb-pic').remove();
 				$('<img src="'+response.url+'">').addClass('fb-pic').prependTo($(this));
