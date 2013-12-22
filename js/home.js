@@ -569,7 +569,7 @@ var christmasFace={
 		});
 		console.log(coords);
 		for (var i = 0; i < coords.length; i++){
-			if (coords[i].confidence>-2){
+			if (coords[i].confidence>-3){
 				$('<div>',{
 					'class':'face',
 					'css':{
