@@ -559,7 +559,7 @@ var christmasFace={
 		console.log('dom setup');
 	},
 	getFace:function(selector){
-		var $img=$(selector);
+		var $img=$(selector).addClass('faces');
 		var coords=$img.find('img').faceDetection({
 			error:function(img,code,message){
 				console.log(img);
@@ -568,19 +568,18 @@ var christmasFace={
 			}
 		});
 		console.log(coords);
-		for (var i = 0; i < coords.length; i++) {
-			$('<div>', {
+		for (var i = 0; i < coords.length; i++){
+			$('<div>',{
 				'class':'face',
-				'css': {
+				'css':{
 					'position':	'absolute',
-					'left':		coords[i].positionX +5+'px',
-					'top':		coords[i].positionY +5+'px',
+					'left':		coords[i].positionX+5+'px',
+					'top':		coords[i].positionY+5+'px',
 					'width': 	coords[i].width		+'px',
 					'height': 	coords[i].height	+'px'
 				}
 			})
 			.appendTo($img);
-			$img.addClass('faces');
 		}
 	},
 	getPicture:function(){
