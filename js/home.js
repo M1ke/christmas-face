@@ -537,7 +537,6 @@ fbFunctionQ.push(function(){
 
 var christmasFace={
 	classFbImg:'fb-pic',
-	classDetectImg:'fb-pic',
 	$app:{},
 	domSetup:function(){
 		var self=this;
@@ -555,29 +554,32 @@ var christmasFace={
 		});
 		$('a.get-face').click(function(e){
 			e.preventDefault();
-			var $img=$('.'+self.classDetectImg);
-			var coords=$img.find('img').faceDetection({
-				error:function(img,code,message){
-					console.log(img);
-					console.log(code);
-					console.log(message);
-				}
-			});
-			console.log(coords);
-			for (var i = 0; i < coords.length; i++) {
-				$('<div>', {
-					'class':'face',
-					'css': {
-						'position':	'absolute',
-						'left':		coords[i].positionX +5+'px',
-						'top':		coords[i].positionY +5+'px',
-						'width': 	coords[i].width		+'px',
-						'height': 	coords[i].height	+'px'
-					}
-				})
-				.appendTo($img);
+			self.getFace($(this).data('face'));
+		});
+	},
+	getFace:function(selector){
+		var $img=$(selector);
+		var coords=$img.find('img').faceDetection({
+			error:function(img,code,message){
+				console.log(img);
+				console.log(code);
+				console.log(message);
 			}
 		});
+		console.log(coords);
+		for (var i = 0; i < coords.length; i++) {
+			$('<div>', {
+				'class':'face',
+				'css': {
+					'position':	'absolute',
+					'left':		coords[i].positionX +5+'px',
+					'top':		coords[i].positionY +5+'px',
+					'width': 	coords[i].width		+'px',
+					'height': 	coords[i].height	+'px'
+				}
+			})
+			.appendTo($img);
+		}
 	},
 	getPicture:function(){
 		var self=this;
