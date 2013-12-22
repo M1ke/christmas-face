@@ -21,7 +21,7 @@ var christmasFace={
 	$app:{},
 	domSetup:function(){
 		var self=this;
-		this.$app=$('.fb-app')
+		this.$app=$('.fb-app');
 		this.$app.bind('fb-login',function(){
 			// self.getPicture($(this));
 		});
@@ -37,6 +37,7 @@ var christmasFace={
 			e.preventDefault();
 			self.getFace($(this).data('face'));
 		});
+		console.log('dom setup');
 	},
 	getFace:function(selector){
 		var $img=$(selector);
