@@ -580,6 +580,7 @@ var christmasFace={
 				}
 			})
 			.appendTo($img);
+			$img.addClass('faces');
 		}
 	},
 	getPicture:function(){
@@ -592,7 +593,7 @@ var christmasFace={
 		var self=this;
 		$.get('save-image.php?file='+url,function(img){
 			return function(){
-				self.$app.find('div.fb-pic').remove();
+				self.$app.find('.'+self.classFbImg).remove();
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+'">');
 			};
 		}(url));
