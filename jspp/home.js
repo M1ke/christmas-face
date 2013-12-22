@@ -50,17 +50,19 @@ var christmasFace={
 		});
 		console.log(coords);
 		for (var i = 0; i < coords.length; i++){
-			$('<div>',{
-				'class':'face',
-				'css':{
-					'position':	'absolute',
-					'left':		coords[i].positionX+5+'px',
-					'top':		coords[i].positionY+5+'px',
-					'width': 	coords[i].width		+'px',
-					'height': 	coords[i].height	+'px'
-				}
-			})
-			.appendTo($img);
+			if (coords[i].confidence>-2){
+				$('<div>',{
+					'class':'face',
+					'css':{
+						'position':	'absolute',
+						'left':		coords[i].positionX+5+'px',
+						'top':		coords[i].positionY+5+'px',
+						'width': 	coords[i].width		+'px',
+						'height': 	coords[i].height	+'px'
+					}
+				})
+				.appendTo($img);
+			}
 		}
 	},
 	getPicture:function(){
