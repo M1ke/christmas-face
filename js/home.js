@@ -562,7 +562,7 @@ var christmasFace={
 		console.log('dom setup');
 	},
 	getFace:function(selector,again){
-		var $img=$(selector).addClass('faces'),hasFaces=false;
+		var $img=$(selector),hasFaces=false;
 		var coords=$img.find('img').faceDetection({
 			error:function(img,code,message){
 				console.log(img);
@@ -602,7 +602,7 @@ var christmasFace={
 		$.get('save-image.php?file='+url,function(img){
 			return function(){
 				self.$app.find('.'+self.classFbImg).remove();
-				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+'">').after('<div class="frame">');
+				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+' faces">').after('<div class="frame">');
 				if (autoface){
 					setTimeout(function(){
 						self.getFace('.'+self.classFbImg,true);
