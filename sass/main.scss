@@ -15,11 +15,8 @@ div.faces {
 	}
 }
 
-div.button {
-	text-align: center;
-	> p {
-		@include button;
-	}
+a.button {
+	@include button;
 }
 
 div.fb-app {
