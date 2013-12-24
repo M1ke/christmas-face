@@ -14,6 +14,10 @@ div.faces {
 		position: absolute; width: 100%; height: 100%; top: 0;
 		background: url(images/snow.png);
 	}
+	div.tinsel {
+		position: absolute; width: 100%; height: 30px; top: 0; left: 0;
+		background: url(images/tinsel.png) no-repeat; background-size: contain;
+	}
 	> img {
 	    max-width: 100%;
 	}
