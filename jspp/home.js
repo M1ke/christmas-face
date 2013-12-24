@@ -58,7 +58,7 @@ var christmasFace={
 					'css':{
 						'position':	'absolute',
 						'left':		coords[i].positionX+5+'px',
-						'top':		coords[i].positionY+5+'px',
+						'top':		coords[i].positionY+5-coords[i].height+'px',
 						'width': 	coords[i].width		+'px',
 						'height': 	coords[i].height	+'px'
 					}
