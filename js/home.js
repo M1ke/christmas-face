@@ -606,7 +606,7 @@ var christmasFace={
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="fb-pic faces">').after('<div class="frame">');
 				if (autoface){
 					setTimeout(function(){
-						self.getFace('.fb-pic',true);
+						self.getFace('.fb-pic');
 					},1000);
 				}
 			};
@@ -633,7 +633,7 @@ var christmasFace={
 		if (this.photos.length>0){
 			$('a.get-photos').text('Click to go again!');
 			var select=rand(0,this.photos.length-1);
-			this.savePhoto(this.photos[select].source);
+			this.savePhoto(this.photos[select].source,true);
 		}
 	},
 };
