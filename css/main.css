@@ -419,9 +419,9 @@ div.faces div.tinsel {
 div.faces div.tree {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100px;
-  height: 123px;
+  left: 10px;
+  width: 140px;
+  height: 172px;
   background: url(images/tree.png) no-repeat;
 }
 /* line 25, ../sass/main.scss */
