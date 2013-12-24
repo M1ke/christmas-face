@@ -1,7 +1,6 @@
 @import "h5bp";
 @include h5bp-normalize;
 
-
 @mixin button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
@@ -45,4 +44,8 @@
 
 body {
 	background: url(images/wood.jpg);
+}
+
+a {
+	color: auto;
 }
