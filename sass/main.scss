@@ -4,7 +4,7 @@ div.faces {
 	position: relative; width: 720px; margin: 0 auto;
 	text-align: center;
 	div.face {
-		background: url(images/hat.png) no-repeat; background-size: cover;
+		background: url(images/hat.png) no-repeat; background-size: contain;
 	}
 	div.deer {
 		position: absolute; bottom: 0; right: 0; width: 125px; height: 141px;
@@ -15,7 +15,7 @@ div.faces {
 		background: url(images/snow.png);
 	}
 	div.tinsel {
-		position: absolute; width: 100%; height: 30px; top: 0; left: 0;
+		position: absolute; top: 0; bottom: 0; left: -20px; right: -20px;
 		background: url(images/tinsel.png) no-repeat; background-size: contain;
 	}
 	> img {

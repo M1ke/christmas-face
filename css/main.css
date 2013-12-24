@@ -386,7 +386,7 @@ div.faces {
 /* line 6, ../sass/main.scss */
 div.faces div.face {
   background: url(images/hat.png) no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 /* line 9, ../sass/main.scss */
 div.faces div.deer {
@@ -408,10 +408,10 @@ div.faces div.frame {
 /* line 17, ../sass/main.scss */
 div.faces div.tinsel {
   position: absolute;
-  width: 100%;
-  height: 30px;
   top: 0;
-  left: 0;
+  bottom: 0;
+  left: -20px;
+  right: -20px;
   background: url(images/tinsel.png) no-repeat;
   background-size: contain;
 }
