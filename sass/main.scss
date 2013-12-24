@@ -57,3 +57,17 @@ blockquote.bible {
 		text-decoration: underline;
 	}
 }
+
+@media print {
+	body {
+		background: transparent;
+		> h1, >h2, > p {
+			display: none;
+		}
+	}
+	div.fb-app {
+		> blockquote,> p {
+			display: none;
+		}
+	}
+}
