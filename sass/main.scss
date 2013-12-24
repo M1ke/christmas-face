@@ -69,5 +69,8 @@ blockquote.bible {
 		> blockquote,> p {
 			display: none;
 		}
+		img {
+			min-height: 520px;
+		}
 	}
 }
