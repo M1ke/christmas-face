@@ -553,6 +553,7 @@ var christmasFace={
 		});
 		$('a.get-photos').click(function(e){
 			e.preventDefault();
+			$(this).html('Making your card&hellip;');
 			self.getPhotos();
 		});
 		$('a.get-face').click(function(e){
@@ -630,6 +631,7 @@ var christmasFace={
 	},
 	outputPhoto:function(){
 		if (this.photos.length>0){
+			$('a.get-photos').text('Click to go again!');
 			var select=rand(0,this.photos.length-1);
 			this.savePhoto(this.photos[select].source,true);
 		}
