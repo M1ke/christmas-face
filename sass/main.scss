@@ -6,3 +6,10 @@ div.faces {
 		border: 2px solid #f00;
 	}
 }
+
+div.fb-button {
+	text-align: center;
+	> p {
+		@include button;
+	}
+}
