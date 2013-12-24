@@ -607,6 +607,8 @@ var christmasFace={
 				if (autoface){
 					setTimeout(function(){
 						window.scroll(0,self.$app.offset().top-10);
+					},500);
+					setTimeout(function(){
 						self.getFace('.fb-pic');
 					},1000);
 				}
