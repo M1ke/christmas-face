@@ -83,9 +83,9 @@ var christmasFace={
 			return function(){
 				self.$app.find('.fb-pic').remove();
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="fb-pic faces">').after('<div class="frame">');
-				window.scroll(0,self.$app.offset().top-10);
 				if (autoface){
 					setTimeout(function(){
+						window.scroll(0,self.$app.offset().top-10);
 						self.getFace('.fb-pic');
 					},1000);
 				}
