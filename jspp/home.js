@@ -32,7 +32,7 @@ var christmasFace={
 		});
 		$('a.get-photos').click(function(e){
 			e.preventDefault();
-			$(this).html('Making your card&hellip;');
+			$(this).html('Christmas elves at work&hellip;');
 			self.getPhotos();
 		});
 		$('a.get-face').click(function(e){
@@ -83,6 +83,7 @@ var christmasFace={
 			return function(){
 				self.$app.find('.fb-pic').remove();
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="fb-pic faces">').after('<div class="frame"></div>'+(rand(0,1)==1 ? '<div class="deer"></div>' : ''));
+				$('a.get-photos').text('Click to go again!');
 				if (autoface){
 					setTimeout(function(){
 						window.scroll(0,self.$app.offset().top-10);
@@ -113,7 +114,6 @@ var christmasFace={
 	},
 	outputPhoto:function(){
 		if (this.photos.length>0){
-			$('a.get-photos').text('Click to go again!');
 			var select=rand(0,this.photos.length-1);
 			this.savePhoto(this.photos[select].source,true);
 		}
