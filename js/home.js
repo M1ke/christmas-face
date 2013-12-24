@@ -534,7 +534,7 @@ fbFunctionQ.push(function(){
 	if (!window.fbChristmas){
 		window.fbChristmas=new fbChristmasFace();
 		fbChristmas.fbLoginOptions={scope:'user_photos'};
-		fbChristmas.textLoggedIn='Great, now for the fun part!';
+		fbChristmas.textLoggedIn='Thanks, now for the cool part!';
 	}
 });
 
