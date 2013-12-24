@@ -500,22 +500,20 @@ blockquote.bible a {
   text-decoration: underline;
 }
 
+/* 
 @media print {
-  /* line 62, ../sass/main.scss */
-  body {
-    background: transparent;
-  }
-  /* line 64, ../sass/main.scss */
-  body > h1, body > h2, body > p {
-    display: none;
-  }
-
-  /* line 69, ../sass/main.scss */
-  div.fb-app > blockquote, div.fb-app > p {
-    display: none;
-  }
-  /* line 72, ../sass/main.scss */
-  div.fb-app img {
-    min-height: 520px;
-  }
-}
+	body {
+		background: transparent;
+		> h1, >h2, > p {
+			display: none;
+		}
+	}
+	div.fb-app {
+		> blockquote,> p {
+			display: none;
+		}
+		img {
+			min-height: 520px;
+		}
+	}
+} */
