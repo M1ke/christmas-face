@@ -5,6 +5,10 @@ div.faces {
 	div.face {
 		border: 2px solid #f00;
 	}
+	div.frame {
+		position: absolute;
+		top: -10px; left: -10px;
+	}
 }
 
 div.button {
