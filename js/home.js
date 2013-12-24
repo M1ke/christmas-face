@@ -3,6 +3,7 @@ var fbQuickApp=function(init,loginEl){
 	this.url='';
 	this.user=0;
 	this.fbLoginOptions={scope:'email'};
+	this.classLoggedIn='logged-in';
 	this.loginEl=loginEl ? loginEl : 'a.fb-login';
 	this.textLoggedIn='Logged in with Facebook';
 	if (init){
@@ -78,7 +79,7 @@ fbQuickApp.prototype.postToFeed=function(post,callback){
 	this.dialog(post,callback);
 };
 fbQuickApp.prototype.userLoggedIn=function(){
-	$(this.loginEl).parent().html(this.textLoggedIn).addClass('logged-in');
+	$(this.loginEl).parent().html(this.textLoggedIn).addClass(this.classLoggedIn);
 	$('.fb-app').fadeIn().trigger('fb-login');
 };
 fbQuickApp.prototype.userNotLoggedIn=function($link){
