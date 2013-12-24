@@ -81,12 +81,12 @@ var christmasFace={
 		var self=this;
 		$.get('save-image.php?file='+url,function(img){
 			return function(){
-				self.$app.find('.'+self.classFbImg).remove();
-				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+' faces">').after('<div class="frame">');
+				self.$app.find('.fb-pic').remove();
+				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="fb-pic faces">').after('<div class="frame">');
 				if (autoface){
 					setTimeout(function(){
-						self.getFace('.'+self.classFbImg,true);
-					},500);
+						self.getFace('.fb-pic',true);
+					},1000);
 				}
 			};
 		}(url));
