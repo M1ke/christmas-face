@@ -39,8 +39,8 @@ var christmasFace={
 		});
 		console.log('dom setup');
 	},
-	getFace:function(selector){
-		var $img=$(selector).addClass('faces');
+	getFace:function(selector,again){
+		var $img=$(selector).addClass('faces'),hasFaces=false;
 		var coords=$img.find('img').faceDetection({
 			error:function(img,code,message){
 				console.log(img);
@@ -49,7 +49,7 @@ var christmasFace={
 			}
 		});
 		console.log(coords);
-		for (var i = 0; i < coords.length; i++){
+		for (var i=0; i<coords.length; i++){
 			if (coords[i].confidence>-2){
 				$('<div>',{
 					'class':'face',
@@ -62,7 +62,11 @@ var christmasFace={
 					}
 				})
 				.appendTo($img);
+				hasFaces=true;
 			}
+		}
+		if (again && !hasFaces){
+			this.outputPhoto();
 		}
 	},
 	getPicture:function(){
@@ -71,12 +75,17 @@ var christmasFace={
 			self.savePhoto(response.data.url);
 		});
 	},
-	savePhoto:function(url){
+	savePhoto:function(url,autoface){
 		var self=this;
 		$.get('save-image.php?file='+url,function(img){
 			return function(){
 				self.$app.find('.'+self.classFbImg).remove();
 				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="'+self.classFbImg+'">');
+				if (autoface){
+					setTimeout(function(){
+						self.getFace('.'+self.classFbImg,true);
+					},500);
+				}
 			};
 		}(url));
 	},
@@ -92,7 +101,7 @@ var christmasFace={
 					self.photos.push(photo);
 				});
 				setTimeout(function(){
-					self.outputPhoto()
+					self.outputPhoto();
 				},500);
 			});
 		}
@@ -100,7 +109,7 @@ var christmasFace={
 	outputPhoto:function(){
 		if (this.photos.length>0){
 			var select=rand(0,this.photos.length-1);
-			this.savePhoto(this.photos[select].source);
+			this.savePhoto(this.photos[select].source,true);
 		}
 	},
 };
