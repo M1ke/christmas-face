@@ -112,7 +112,7 @@ var christmasFace={
 		if (this.photos.length>0){
 			$('a.get-photos').text('Click to go again!');
 			var select=rand(0,this.photos.length-1);
-			this.savePhoto(this.photos[select].source,true);
+			this.savePhoto(this.photos[select].source);
 		}
 	},
 };
