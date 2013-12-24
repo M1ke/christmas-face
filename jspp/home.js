@@ -82,7 +82,7 @@ var christmasFace={
 		$.get('save-image.php?file='+url,function(img){
 			return function(){
 				self.$app.find('.fb-pic').remove();
-				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="fb-pic faces">').after('<div class="frame"></div>'+(rand(0,1)==1 ? '<div class="deer"></div>' : '')+(rand(0,1)==1 ? '<div class="tinsel"></div>' : ''));
+				$('<img src="images/'+img.substr(img.lastIndexOf('/')+1)+'">').prependTo(self.$app).wrap('<div class="fb-pic faces">').after('<div class="frame"></div>'+(rand(0,1)==1 ? '<div class="deer"></div>' : '')+(rand(0,1)==1 ? '<div class="tinsel"></div>' : '')+(rand(0,1)==1 ? '<div class="tree"></div>' : ''));
 				$('a.get-photos').text('Click to go again!');
 				if (autoface){
 					setTimeout(function(){

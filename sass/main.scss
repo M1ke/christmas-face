@@ -18,6 +18,10 @@ div.faces {
 		position: absolute; top: 0; bottom: 0; left: -20px; right: -20px;
 		background: url(images/tinsel.png) no-repeat; background-size: contain;
 	}
+	div.tree {
+		position: absolute; bottom: 0; left: 0;
+		background: url(images/tree.png) no-repeat; background-size: contain;
+	}
 	> img {
 	    max-width: 100%;
 	}
