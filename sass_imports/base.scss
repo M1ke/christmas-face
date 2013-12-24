@@ -3,7 +3,7 @@
 
 @import "../css/fonts/permanent-marker.css";
 
-$buttonFont: arial,helvetica,sans-serif
+$buttonFont: arial,helvetica,sans-serif;
 
 @mixin button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
