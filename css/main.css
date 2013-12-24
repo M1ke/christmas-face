@@ -420,8 +420,9 @@ div.faces div.tree {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 100px;
+  height: 123px;
   background: url(images/tree.png) no-repeat;
-  background-size: contain;
 }
 /* line 25, ../sass/main.scss */
 div.faces > img {
