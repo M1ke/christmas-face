@@ -4,6 +4,7 @@ var fbQuickApp=function(init,loginEl){
 	this.user=0;
 	this.fbLoginOptions={scope:'email'};
 	this.loginEl=loginEl ? loginEl : 'a.fb-login';
+	this.textLoggedIn='Logged in with Facebook';
 	if (init){
 		this.onClickLogin();
 		this.getLoginStatus();
@@ -77,7 +78,7 @@ fbQuickApp.prototype.postToFeed=function(post,callback){
 	this.dialog(post,callback);
 };
 fbQuickApp.prototype.userLoggedIn=function(){
-	$(this.loginEl).parent().html('Logged in with Facebook').addClass('logged-in');
+	$(this.loginEl).parent().html(this.textLoggedIn).addClass('logged-in');
 	$('.fb-app').fadeIn().trigger('fb-login');
 };
 fbQuickApp.prototype.userNotLoggedIn=function($link){
@@ -532,6 +533,7 @@ fbFunctionQ.push(function(){
 	if (!window.fbChristmas){
 		window.fbChristmas=new fbChristmasFace();
 		fbChristmas.fbLoginOptions={scope:'user_photos'};
+		fbChristmas.textLoggedIn='Great, now for the fun part!';
 	}
 });
 
